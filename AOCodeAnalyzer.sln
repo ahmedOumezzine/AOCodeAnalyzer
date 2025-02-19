@@ -1,0 +1,54 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.12.35707.178
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{4B6024FF-6F2A-4AF0-9A65-DE34F8EAC315}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{0F90238B-27F1-4C9B-A0AD-14B897FAE465}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docs", "docs", "{CC3FD1EB-D44B-42FB-824D-3F3110141ACD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "samples", "samples", "{F06CE93C-D15C-4DC5-8E27-75994076C1EA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AOCodeAnalyzer.Analyzers", "src\AOCodeAnalyzer.Analyzers\AOCodeAnalyzer.Analyzers.csproj", "{5D625668-6F33-4FD0-83E9-8DBC2E39A61C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AOCodeAnalyzer.Refactoring", "src\AOCodeAnalyzer.Refactoring\AOCodeAnalyzer.Refactoring.csproj", "{C6FB27E7-EF75-4DF4-B6B4-76B2E0E3D36C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AOCodeAnalyzer.TestGenerator", "src\AOCodeAnalyzer.TestGenerator\AOCodeAnalyzer.TestGenerator.csproj", "{327655DC-7A84-4DA5-936F-8A96C36AE086}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AOCodeAnalyzer.Core", "src\AOCodeAnalyzer.Core\AOCodeAnalyzer.Core.csproj", "{C5265E94-622D-4BB6-A75F-A30254C0856C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5D625668-6F33-4FD0-83E9-8DBC2E39A61C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5D625668-6F33-4FD0-83E9-8DBC2E39A61C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5D625668-6F33-4FD0-83E9-8DBC2E39A61C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5D625668-6F33-4FD0-83E9-8DBC2E39A61C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C6FB27E7-EF75-4DF4-B6B4-76B2E0E3D36C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C6FB27E7-EF75-4DF4-B6B4-76B2E0E3D36C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C6FB27E7-EF75-4DF4-B6B4-76B2E0E3D36C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C6FB27E7-EF75-4DF4-B6B4-76B2E0E3D36C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{327655DC-7A84-4DA5-936F-8A96C36AE086}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{327655DC-7A84-4DA5-936F-8A96C36AE086}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{327655DC-7A84-4DA5-936F-8A96C36AE086}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{327655DC-7A84-4DA5-936F-8A96C36AE086}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C5265E94-622D-4BB6-A75F-A30254C0856C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C5265E94-622D-4BB6-A75F-A30254C0856C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C5265E94-622D-4BB6-A75F-A30254C0856C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C5265E94-622D-4BB6-A75F-A30254C0856C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{5D625668-6F33-4FD0-83E9-8DBC2E39A61C} = {4B6024FF-6F2A-4AF0-9A65-DE34F8EAC315}
+		{C6FB27E7-EF75-4DF4-B6B4-76B2E0E3D36C} = {4B6024FF-6F2A-4AF0-9A65-DE34F8EAC315}
+		{327655DC-7A84-4DA5-936F-8A96C36AE086} = {4B6024FF-6F2A-4AF0-9A65-DE34F8EAC315}
+		{C5265E94-622D-4BB6-A75F-A30254C0856C} = {4B6024FF-6F2A-4AF0-9A65-DE34F8EAC315}
+	EndGlobalSection
+EndGlobal

@@ -19,6 +19,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AOCodeAnalyzer.TestGenerato
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AOCodeAnalyzer.Core", "src\AOCodeAnalyzer.Core\AOCodeAnalyzer.Core.csproj", "{C5265E94-622D-4BB6-A75F-A30254C0856C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AOCodeAnalyzer.UI", "samples\AOCodeAnalyzer.UI\AOCodeAnalyzer.UI.csproj", "{F1720176-1A7F-4B78-BEB4-1D8878684BDB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -41,6 +43,10 @@ Global
 		{C5265E94-622D-4BB6-A75F-A30254C0856C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C5265E94-622D-4BB6-A75F-A30254C0856C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C5265E94-622D-4BB6-A75F-A30254C0856C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F1720176-1A7F-4B78-BEB4-1D8878684BDB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F1720176-1A7F-4B78-BEB4-1D8878684BDB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F1720176-1A7F-4B78-BEB4-1D8878684BDB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F1720176-1A7F-4B78-BEB4-1D8878684BDB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -50,5 +56,6 @@ Global
 		{C6FB27E7-EF75-4DF4-B6B4-76B2E0E3D36C} = {4B6024FF-6F2A-4AF0-9A65-DE34F8EAC315}
 		{327655DC-7A84-4DA5-936F-8A96C36AE086} = {4B6024FF-6F2A-4AF0-9A65-DE34F8EAC315}
 		{C5265E94-622D-4BB6-A75F-A30254C0856C} = {4B6024FF-6F2A-4AF0-9A65-DE34F8EAC315}
+		{F1720176-1A7F-4B78-BEB4-1D8878684BDB} = {F06CE93C-D15C-4DC5-8E27-75994076C1EA}
 	EndGlobalSection
 EndGlobal

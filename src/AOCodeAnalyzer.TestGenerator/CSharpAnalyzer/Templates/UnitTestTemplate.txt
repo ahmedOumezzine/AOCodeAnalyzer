@@ -1,0 +1,16 @@
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
+
+[TestClass]
+public class {{ClassName}}Tests
+{
+    private {{ClassName}} _service;
+
+    [TestInitialize]
+    public void TestInit()
+    {
+        _service = new {{ClassName}}({{ConstructorParameters}});
+    }
+
+    {{TestMethodContent}}
+}

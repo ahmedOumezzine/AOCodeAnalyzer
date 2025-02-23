@@ -1,0 +1,12 @@
+[TestMethod]
+public void {{TestMethodName}}()
+{
+    // Arrange
+    //  {{ArrangeCode}}
+    
+    // Act
+    {{ActCode}}
+
+    // Assert
+    {{AssertCode}}
+}

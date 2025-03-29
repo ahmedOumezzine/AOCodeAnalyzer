@@ -1,4 +1,5 @@
 using AOCodeAnalyzer.TestGenerator.CSharpAnalyzer.Services;
+using AOCodeAnalyzer.TestGenerator.TypeScriptAnalyzer.Services;
 
 namespace AOCodeAnalyzer.UI
 {
@@ -11,9 +12,9 @@ namespace AOCodeAnalyzer.UI
 
         private void button1_Click(object sender, EventArgs e)
         {
-            var parser = new CSharpCodeParserService();
+            var parser = new TSCodeParserService();
             var testSuggestions = parser.ParseCode(richTextBox1.Text);
-            var generator = new CSharpTestGeneratorService();
+            var generator = new TSTestGeneratorService();
             richTextBox2.Text  = generator.GenerateTests(testSuggestions);
 
 

@@ -118,14 +118,14 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="richTextBox1.Text" xml:space="preserve">
-    <value>using System;
+    <value>export class OrderProcessor {
+    constructor(private logger: LoggerService, private config: AppConfig) {}
 
-public class ComplexLogic
-{
-    public string ProcessOrder(int quantity, bool isPremiumCustomer)
-    {
-        if (quantity &gt; 10 &amp;&amp; isPremiumCustomer)
+    public processOrder(quantity: number, isPremiumCustomer: boolean): string {
+        if (quantity &gt; 10 &amp;&amp; isPremiumCustomer) {
+            this.logger.log("Discount Applied");
             return "Discount Applied";
+        }
         return "No Discount";
     }
 }</value>

@@ -1,0 +1,10 @@
+it('{{TestMethodName}}', () => {
+  // Arrange
+  {{ArrangeCode}}
+
+  // Act
+  {{ActCode}}
+
+  // Assert
+  {{AssertCode}}
+});

@@ -1,0 +1,15 @@
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { {{ClassName}} } from './{{ClassName}}';
+
+describe('{{ClassName}}', () => {
+  let component: {{ClassName}};
+
+  // Mock declarations
+  {{MockDeclarations}}
+
+  beforeEach(() => {
+    component = new {{ClassName}}({{ConstructorParameters}});
+  });
+
+  {{TestMethodContent}}
+});

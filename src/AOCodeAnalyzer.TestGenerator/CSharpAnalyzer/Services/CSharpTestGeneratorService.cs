@@ -15,8 +15,8 @@ namespace AOCodeAnalyzer.TestGenerator.CSharpAnalyzer.Services
             var result = new StringBuilder();
 
             // Charger les templates depuis les ressources intégrées
-            string classTemplate = LoadTemplateFromResource("UnitTestTemplate.txt");
-            string methodTemplate = LoadTemplateFromResource("TestMethodTemplate.txt");
+            string classTemplate = LoadTemplateFromResource("CSharpAnalyzer", "UnitTestTemplate.txt");
+            string methodTemplate = LoadTemplateFromResource("CSharpAnalyzer", "TestMethodTemplate.txt");
 
             // Regrouper les suggestions par nom de classe
             var groupedSuggestions = testSuggestions.GroupBy(s => s.ClassName);
@@ -32,7 +32,7 @@ namespace AOCodeAnalyzer.TestGenerator.CSharpAnalyzer.Services
                 // Remplacer les placeholders dans le template de classe
                 string classContent = classTemplate
                     .Replace("{{ClassName}}", className)
-                    .Replace("{{ConstructorParameters}}", string.Join(", ", suggestions.SelectMany(s => s.Parameters).Distinct().Select(p => $"/* Provide value for {p.Split(' ')[0]} */")))
+                    .Replace("{{ConstructorParameters}}", string.Join(", ", suggestions.SelectMany(s => s.Parameters).Distinct().Select(p => p.Split(' ')[0])))
                     .Replace("{{TestMethodContent}}", testMethodsContent);
 
                 // Ajouter la classe de test au résultat final
@@ -48,12 +48,28 @@ namespace AOCodeAnalyzer.TestGenerator.CSharpAnalyzer.Services
             foreach (var suggestion in suggestions)
             {
                 foreach (var testDetail in suggestion.TestDetails)
-                {
+                {  // Créer des mocks pour les paramètres complexes
+                    var mockDeclarations = new StringBuilder();
+                    var mockParameters = new StringBuilder();
+
+                    foreach (var parameter in suggestion.Parameters)
+                    {
+                        var paramName = parameter.Split(' ')[0];
+                        var paramType = parameter.Split(' ')[1].Replace("(", "").Replace(")", "");
+                        mockDeclarations.AppendLine($"var mock{paramName} = new Mock<{paramType}>(); \n");
+                        mockParameters.Append($"mock{paramName}, ");
+ 
+                    }
+
+                    // Supprimer la virgule finale
+                    if (mockParameters.Length > 0)
+                        mockParameters.Length -= 2;
                     // Construire le code "Arrange"
-                    string ArrangeCode = string.Join(" >> ", testDetail.ConditionPath);
+                    string ArrangeCode = "// ConditionPath" + string.Join(" >> ", testDetail.ConditionPath);
+                    ArrangeCode += "\n " + mockDeclarations;
                     // Construire le code "Act"
                     string actCode = suggestion.Parameters.Any()
-                        ? $"var result = _service.{suggestion.MethodName}({string.Join(", ", suggestion.Parameters.Select(p => $"/* Provide value for {p.Split(' ')[0]} */"))});"
+                        ? $"var result = _service.{suggestion.MethodName}({mockParameters});"
                         : $"var result = _service.{suggestion.MethodName}();";
 
                     // Construire le code "Assert"
@@ -88,10 +104,10 @@ namespace AOCodeAnalyzer.TestGenerator.CSharpAnalyzer.Services
             }
             return expectedValue;
         }
-        private string LoadTemplateFromResource(string resourceName)
+        private string LoadTemplateFromResource(string dossier, string resourceName)
         {
             var assembly = Assembly.GetExecutingAssembly();
-            var fullResourceName = $"{assembly.GetName().Name}.CSharpAnalyzer.Templates.{resourceName}";
+            var fullResourceName = $"{assembly.GetName().Name}.{dossier}.Templates.{resourceName}";
 
             using (Stream stream = assembly.GetManifestResourceStream(fullResourceName))
             {
